@@ -1,0 +1,70 @@
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // 1. Odd or Even
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        if (n % 2 == 0) {
+            System.out.println(n + " is Even");
+        } else {
+            System.out.println(n + " is Odd");
+        }
+
+        // 2. Smallest and Largest of 3 numbers
+        System.out.print("Enter three numbers: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        int largest = a;
+        int smallest = a;
+
+        if (b > largest) largest = b;
+        if (c > largest) largest = c;
+
+        if (b < smallest) smallest = b;
+        if (c < smallest) smallest = c;
+
+        System.out.println("Largest = " + largest);
+        System.out.println("Smallest = " + smallest);
+
+        // 3. Reverse a number
+        System.out.print("Enter a number to reverse: ");
+        int num = sc.nextInt();
+        int temp = num;
+        int reverse = 0;
+
+        while (temp != 0) {
+            int digit = temp % 10;
+            reverse = reverse * 10 + digit;
+            temp = temp / 10;
+        }
+
+        System.out.println("Reverse = " + reverse);
+
+        // 4. Palindrome or not
+        if (num >= 0 && num == reverse) {
+            System.out.println(num + " is a Palindrome");
+        } else {
+            System.out.println(num + " is not a Palindrome");
+        }
+
+        // 5. Leap year or not
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+
+        if (year % 400 == 0 ||
+            (year % 4 == 0 && year % 100 != 0)) {
+            System.out.println(year + " is a Leap Year");
+        } else {
+            System.out.println(year + " is not a Leap Year");
+        }
+
+        sc.close();
+    }
+}
